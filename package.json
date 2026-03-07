@@ -1,0 +1,12 @@
+{
+  "name": "career-guidance-system",
+  "version": "1.0.0",
+  "description": "AI-Powered Career Guidance System for Indian Students",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "cd frontend && npm install && npm run build"
+  },
+  "keywords": ["career", "guidance", "ai", "aws", "bedrock"],
+  "author": "Your Name",
+  "license": "MIT"
+}
