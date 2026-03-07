@@ -8,7 +8,6 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || '/api';
 
 function App() {
   const [mode, setMode] = useState('chat'); // 'chat', 'form', 'results'
-  const [userConsent, setUserConsent] = useState(false);
   const [careerResults, setCareerResults] = useState(null);
   const [loading, setLoading] = useState(false);
 
