@@ -43,7 +43,6 @@ function App() {
           "To provide personalized career recommendations, I'll need to ask about your education, skills, interests, and location. This information will only be used for this session. Do you consent to proceed?"
         );
         console.log('User consent:', consent);
-        setUserConsent(consent);
         if (consent) {
           setMode('form');
         }
@@ -119,7 +118,6 @@ function App() {
             results={careerResults} 
             onStartOver={() => {
               setMode('chat');
-              setUserConsent(false);
               setCareerResults(null);
             }}
           />
