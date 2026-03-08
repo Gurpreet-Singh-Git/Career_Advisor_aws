@@ -71,3 +71,4 @@ htmlcov/
 # Secrets
 secrets.json
 credentials.json
+.vercel

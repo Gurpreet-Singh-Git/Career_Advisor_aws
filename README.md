@@ -2,6 +2,8 @@
 
 ## AWS Hackathon Submission - AI for Bharat
 
+🔗 **Live Demo:** https://careeradvisor-2pr0o7zp1-gurpreet161singhking-1489s-projects.vercel.app
+
 ### Project Overview
 
 An intelligent, serverless career guidance platform that combines explainable Machine Learning with AWS Bedrock AI to provide personalized career recommendations for Indian students. The system uses transparent ML scoring for decision-making and AWS Bedrock (Claude) for natural language interactions and explanations.
