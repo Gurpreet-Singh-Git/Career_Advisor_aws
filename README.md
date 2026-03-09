@@ -2,7 +2,7 @@
 
 ## AWS Hackathon Submission - AI for Bharat
 
-🔗 **Live Demo:** https://careeradvisor-2pr0o7zp1-gurpreet161singhking-1489s-projects.vercel.app
+🔗 **Live Demo:** https://careeradvisoraws.vercel.app
 
 ### Project Overview
 
