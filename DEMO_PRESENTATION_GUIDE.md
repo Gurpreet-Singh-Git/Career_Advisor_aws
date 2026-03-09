@@ -8,6 +8,12 @@
 
 ---
 
+
+
+
+
+
+
 ## 🎯 Demo Flow (3 Minutes)
 
 ### **0:00 - 0:30 | Introduction (30 seconds)**
@@ -105,6 +111,14 @@ Add these points:
 
 **Before closing:**
 > "We also prioritize ethics - explicit consent, no permanent storage, clear disclaimers that these are recommendations not guarantees, and no bias in our algorithm."
+
+
+
+
+
+
+
+
 
 ### If Demo Runs Slow (Over 3:00)
 
