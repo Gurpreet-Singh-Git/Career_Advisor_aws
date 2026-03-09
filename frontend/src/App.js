@@ -101,49 +101,100 @@ function App() {
     
     try {
       if (DEMO_MODE) {
-        // Static demo data based on form input
+        // Static demo data - same for ANY form input
         const demoRankings = [
           {
             title: "Software Engineer",
-            score: 87,
+            score: 0.87,
+            category: "Technology",
             breakdown: {
-              skill_match: 90,
-              education_fit: 85,
-              interest_alignment: 88,
-              regional_demand: 85
+              skill_match: 0.90,
+              education_fit: 0.85,
+              interest_alignment: 0.88,
+              regional_demand: 0.85
+            },
+            metadata: {
+              avg_salary_range: "₹6-12 lakhs/year",
+              growth_outlook: "High",
+              education_required: "BTech/BCA/MCA"
             }
           },
           {
             title: "Data Scientist",
-            score: 82,
+            score: 0.82,
+            category: "Technology",
             breakdown: {
-              skill_match: 85,
-              education_fit: 80,
-              interest_alignment: 82,
-              regional_demand: 80
+              skill_match: 0.85,
+              education_fit: 0.80,
+              interest_alignment: 0.82,
+              regional_demand: 0.80
+            },
+            metadata: {
+              avg_salary_range: "₹5-10 lakhs/year",
+              growth_outlook: "Very High",
+              education_required: "BTech/MSc/MCA"
             }
           },
           {
             title: "Cloud Solutions Architect",
-            score: 78,
+            score: 0.78,
+            category: "Technology",
             breakdown: {
-              skill_match: 80,
-              education_fit: 75,
-              interest_alignment: 80,
-              regional_demand: 78
+              skill_match: 0.80,
+              education_fit: 0.75,
+              interest_alignment: 0.80,
+              regional_demand: 0.78
+            },
+            metadata: {
+              avg_salary_range: "₹7-14 lakhs/year",
+              growth_outlook: "Very High",
+              education_required: "BTech/BCA with certifications"
             }
           }
         ];
         
         const demoExplanations = [
           {
-            explanation: `Software Engineering is an excellent match for you! With your ${formData.education_level} background and skills in ${formData.skills.slice(0, 2).join(' and ')}, you're well-positioned for this career.\n\nWhy this fits you:\nYour strong technical skills and interest in ${formData.interests[0]} align perfectly with software development. The Indian tech industry is booming, especially in ${formData.location}, with companies actively hiring.\n\nYour Roadmap:\n1. Master data structures and algorithms\n2. Build 3-5 portfolio projects\n3. Contribute to open-source projects\n4. Apply to product-based companies\n\nStarting salary: ₹6-12 lakhs, growing to ₹20+ lakhs with experience. You've got this! 🚀`
+            explanation: `Software Engineering is an excellent match for you! With your ${formData.education_level} background and skills in ${formData.skills.slice(0, 2).join(' and ')}, you're well-positioned for this career.\n\nWhy this fits you:\nYour strong technical skills and interest in ${formData.interests[0]} align perfectly with software development. The Indian tech industry is booming, especially in ${formData.location}, with companies actively hiring.\n\nYour Roadmap:\n1. Master data structures and algorithms\n2. Build 3-5 portfolio projects\n3. Contribute to open-source projects\n4. Apply to product-based companies\n\nStarting salary: ₹6-12 lakhs, growing to ₹20+ lakhs with experience. You've got this! 🚀`,
+            key_strengths: [
+              "Strong technical foundation",
+              "Problem-solving mindset",
+              "Growing tech ecosystem in " + formData.location
+            ],
+            roadmap: [
+              "Master data structures and algorithms",
+              "Build 3-5 portfolio projects",
+              "Contribute to open-source projects",
+              "Apply to product-based companies"
+            ]
           },
           {
-            explanation: `Data Science is a fantastic career path for you! Your analytical mindset and ${formData.education_level} education provide a solid foundation.\n\nWhy this fits you:\nYour interest in ${formData.interests[1] || formData.interests[0]} and technical skills make you ideal for data-driven roles. ${formData.location} has a growing demand for data professionals.\n\nYour Roadmap:\n1. Learn Python, SQL, and statistics\n2. Master ML libraries (scikit-learn, TensorFlow)\n3. Complete 2-3 data analysis projects\n4. Build a portfolio on GitHub/Kaggle\n\nStarting salary: ₹5-10 lakhs, reaching ₹25+ lakhs as you gain expertise. The future is data-driven! 📊`
+            explanation: `Data Science is a fantastic career path for you! Your analytical mindset and ${formData.education_level} education provide a solid foundation.\n\nWhy this fits you:\nYour interest in ${formData.interests[1] || formData.interests[0]} and technical skills make you ideal for data-driven roles. ${formData.location} has a growing demand for data professionals.\n\nYour Roadmap:\n1. Learn Python, SQL, and statistics\n2. Master ML libraries (scikit-learn, TensorFlow)\n3. Complete 2-3 data analysis projects\n4. Build a portfolio on GitHub/Kaggle\n\nStarting salary: ₹5-10 lakhs, reaching ₹25+ lakhs as you gain expertise. The future is data-driven! 📊`,
+            key_strengths: [
+              "Analytical thinking",
+              "Technical aptitude",
+              "Growing data science market"
+            ],
+            roadmap: [
+              "Learn Python, SQL, and statistics",
+              "Master ML libraries (scikit-learn, TensorFlow)",
+              "Complete 2-3 data analysis projects",
+              "Build a portfolio on GitHub/Kaggle"
+            ]
           },
           {
-            explanation: `Cloud Solutions Architect is an emerging and lucrative career! Your technical background positions you well for this role.\n\nWhy this fits you:\nWith your ${formData.education_level} and interest in ${formData.interests[0]}, you can excel in cloud technologies. ${formData.location} has increasing demand for cloud experts.\n\nYour Roadmap:\n1. Get AWS/Azure/GCP certifications\n2. Learn infrastructure as code (Terraform)\n3. Build cloud-based projects\n4. Gain experience with microservices\n\nStarting salary: ₹7-14 lakhs, growing to ₹30+ lakhs with certifications and experience. Cloud is the future! ☁️`
+            explanation: `Cloud Solutions Architect is an emerging and lucrative career! Your technical background positions you well for this role.\n\nWhy this fits you:\nWith your ${formData.education_level} and interest in ${formData.interests[0]}, you can excel in cloud technologies. ${formData.location} has increasing demand for cloud experts.\n\nYour Roadmap:\n1. Get AWS/Azure/GCP certifications\n2. Learn infrastructure as code (Terraform)\n3. Build cloud-based projects\n4. Gain experience with microservices\n\nStarting salary: ₹7-14 lakhs, growing to ₹30+ lakhs with certifications and experience. Cloud is the future! ☁️`,
+            key_strengths: [
+              "Technical foundation",
+              "Interest in emerging technologies",
+              "High demand for cloud skills"
+            ],
+            roadmap: [
+              "Get AWS/Azure/GCP certifications",
+              "Learn infrastructure as code (Terraform)",
+              "Build cloud-based projects",
+              "Gain experience with microservices"
+            ]
           }
         ];
         
