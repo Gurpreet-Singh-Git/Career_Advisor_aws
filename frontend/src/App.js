@@ -30,10 +30,16 @@ function App() {
         if (lowerMessage.includes('personalized') || lowerMessage.includes('recommendation')) {
           response = "I'd be happy to provide personalized career recommendations! To give you the best suggestions, I'll need to understand your background, skills, and interests. Would you like to proceed?";
           requiresForm = true;
+        } else if (lowerMessage.includes('technology') || lowerMessage.includes('tech')) {
+          response = "Technology careers are booming in India! Popular options include:\n\n• Software Engineer (₹6-15 lakhs starting)\n• Data Scientist (₹5-12 lakhs starting)\n• Cloud Solutions Architect (₹7-14 lakhs starting)\n• AI/ML Engineer (₹8-16 lakhs starting)\n• DevOps Engineer (₹6-13 lakhs starting)\n\nThese careers have high demand in cities like Bangalore, Hyderabad, Pune, and Mumbai. Would you like personalized recommendations based on your profile?";
+          requiresForm = false;
+        } else if (lowerMessage.includes('science') || lowerMessage.includes('student')) {
+          response = "Science students have excellent career opportunities! Based on your stream:\n\n• PCM (Physics, Chemistry, Math): Engineering, Data Science, Research\n• PCB (Physics, Chemistry, Biology): Medicine, Biotechnology, Healthcare\n• Both: Environmental Science, Forensics, Pharmacy\n\nStarting salaries range from ₹4-12 lakhs depending on the field. Would you like personalized recommendations based on your specific interests and skills?";
+          requiresForm = false;
         } else if (lowerMessage.includes('btech') || lowerMessage.includes('engineering')) {
           response = "BTech remains a strong choice in 2026! With India's growing tech sector, engineering graduates have excellent opportunities in software development, AI/ML, and emerging technologies. The average starting salary ranges from ₹4-8 lakhs, with top companies offering ₹15+ lakhs. Would you like personalized recommendations based on your profile?";
           requiresForm = false;
-        } else if (lowerMessage.includes('career') || lowerMessage.includes('job')) {
+        } else if (lowerMessage.includes('career') || lowerMessage.includes('job') || lowerMessage.includes('explore')) {
           response = "India offers diverse career opportunities across technology, healthcare, finance, and creative fields. Popular careers include Software Engineer, Data Scientist, Digital Marketing, and Healthcare professionals. Each has unique requirements and growth potential. Would you like personalized recommendations?";
           requiresForm = false;
         } else {
